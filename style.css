@@ -71,3 +71,75 @@ body{
     color: #FFFFFF;
     box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
 }
+
+.bg-login{
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+}
+.login-container{
+    background-color: #ffffff;
+    align-items: center;
+    margin-top: min(13%,140px);
+    margin-bottom: min(13%,140px);
+    margin-left: min(27%,525px);
+    margin-right: min(27%,525px);
+    padding: 71px 150px;
+    width: 870px;
+    height: 800px;
+    left: 525px;
+    top: 140px;
+    text-align:center;
+}
+.login-container p{
+    text-align: center;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 89px ;
+    color: #000000;
+}
+.register a{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+input[type=text], input[type=password]{
+    width: 569px;
+    height: 96px;
+    left: 676px;
+    top: 540px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    padding-left: min(10%,59px);
+    margin-bottom: 88px;
+    border-style: none;
+    background: #F7F7F7;
+}
+
+button[type=submit]{
+    width: 270px;
+    height: 96px;
+    left: 825px;
+    top: 725px;
+    background: #367D5D;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+
+::placeholder{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
