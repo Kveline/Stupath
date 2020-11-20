@@ -237,7 +237,7 @@ body{
 .kerja-container{
     background: #fff;
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 .kerja-container p{
     font-weight: 900;
@@ -284,4 +284,58 @@ img{
     border-radius: 50%;
     width: 234px;
     height: 234px;
+}
+/*learn*/
+.path-container{
+    background: #fff;
+    height: 100%;
+    width: 100vw;
+    padding-left: 75px;
+    padding-right: 115px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 114px;
+}
+
+.path-container h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 88px;
+    color: #367D5D;
+    padding-top:35px;
+    padding-bottom: 99px;
+}
+.content img{
+    margin: 0;
+    margin-right: 180px;
+}
+.content h1{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+
+/* #151515 */
+
+    color: #151515;
+}
+.content p{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 27px;
+    color: #000000;
+}
+
+.content a{
+    padding: 11px 37px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #F7F7F7;
+    background: #367D5D;
+    box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
 }
