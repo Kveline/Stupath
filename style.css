@@ -7,6 +7,8 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #000000;
 }
+
+/*index*/
 .text{
     margin: auto;
     padding-top:min(23%,246px);
@@ -72,7 +74,7 @@ body{
     color: #FFFFFF;
     box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
 }
-
+/*login*/
 .login-container{
     background-color: #ffffff;
     align-items: center;
@@ -139,7 +141,7 @@ body{
     color: #000000;
 
 }
-
+/*register*/
 .reg-container{
     background-color: #ffffff;
     align-items: center;
@@ -189,4 +191,97 @@ body{
     color: #FFFFFF;
     margin-bottom: 25px;
     margin-top: 34px;
+}
+/*kerja*/
+.title-bar{
+    background: #367D5D;
+    width: 100vw;
+    height: 424px;
+    position: relative;
+}
+.navbar ul{
+    display: flex;
+    float: right;
+}
+
+.navbar li{
+    list-style: none;
+    margin-left: 75px;
+    margin-top: 29px;
+}
+.navbar li a{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.uname{
+    padding: 29px 36px;
+    background: #151515;
+}
+.title-bar h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 144px;
+    line-height: 176px;
+    white-space: nowrap;
+    height: 144px;
+    margin-left: 75px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+}
+
+.kerja-container{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+}
+.kerja-container p{
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    padding-top: 65px;
+    margin-left: 75px;
+    margin-bottom: 92px;
+    color: #000000;
+}
+.pekerjaan ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pekerjaan li{
+    list-style: none;
+    margin: auto;
+    cursor: pointer;
+}
+.kerjaa{
+    background: #F7F7F7;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    height: 420px;
+    width: 420px;
+    margin-bottom: 57px;
+}
+
+.kerjaa p{
+    flex: auto;
+    margin: 0;
+    padding-top:28px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    margin: auto;
+    margin-top: 37px;
+    border-radius: 50%;
+    width: 234px;
+    height: 234px;
 }
