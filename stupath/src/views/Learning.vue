@@ -1,20 +1,15 @@
 <template>
   <div v-if="pekerjaan">
     <Navbar />
-    <h1 class="judul-halaman">LEARNING PATH</h1>
-
-    <div class="judul">
-      <h2>Web Developer</h2>
-
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-        data-whatever="@mdo"
-      >
-        Tambah Materi
-      </button>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">{{ pekerjaan.nama }}</h1>
+        <p class="lead">
+          Kami telah menyediakan <i>Learning Path</i>
+          <br />
+          mengantarkanmu menjadi seorang {{ pekerjaan.nama }}
+        </p>
+      </div>
     </div>
 
     <!-- modal -->
@@ -119,12 +114,33 @@
       </div>
     </div>
     <!--  end of learning path -->
+
+    <a
+      v-if="userProfile.role === 'admin'"
+      data-toggle="modal"
+      data-target="#exampleModal"
+      data-whatever="@mdo"
+      class="float"
+    >
+      <svg
+        fill="white"
+        height="22px"
+        viewBox="0 0 448 448"
+        width="22px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"
+        />
+      </svg>
+    </a>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar";
 import firebase from "../firebase";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -153,6 +169,7 @@ export default {
           let data = snapshot.data();
           this.pekerjaan = data;
         });
+      console.log(this.pekerjaan);
     },
 
     async tambahLearningPath() {
@@ -173,9 +190,9 @@ export default {
 
   mounted() {
     this.fetchData();
-    console.log(this.$route.params.id);
     console.log(this.pekerjaan);
-  }
+  },
+  computed: mapState(["userProfile"])
 };
 </script>
 
@@ -221,8 +238,10 @@ h2 {
   padding-right: 115px;
 }
 .content {
+  border-bottom: 1px solid gray;
+  margin-bottom: 42px;
   display: flex;
-  padding-bottom: 114px;
+  padding-bottom: 40px;
   display: flex;
   align-items: center;
 }
@@ -232,49 +251,78 @@ h2 {
   font-weight: 900;
   font-size: 72px;
   line-height: 88px;
-  color: #367d5d;
+  color: #00918e;
   padding-top: 35px;
   padding-bottom: 99px;
 }
 
 .content h1 {
   font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
-
+  font-size: 22px;
+  color: #212e22;
   /* #151515 */
 
   color: #151515;
 }
 .content p {
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
+  color: #6f737b;
+  font-weight: 300;
+  font-size: 18px;
   margin-bottom: 27px;
-  color: #000000;
 }
 
 .content a {
-  padding: 11px 37px;
+  padding: 8px 20px;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 16px;
+  border-radius: 12px;
   color: #f7f7f7;
-  background: #367d5d;
-  box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.25);
+  background: rgba(0, 157, 117, 0.8);
+  box-shadow: 2px 2px 3px #999;
   text-decoration: none;
 }
 
 .counter {
   border-radius: 50%;
   color: white;
-  width: 120px;
-  background: #367d5d;
-  height: 120px;
+  width: 80px;
+  background: rgba(0, 157, 117, 0.8);
+  height: 80px;
   display: flex;
   margin-right: 50px;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  font-size: 40px;
+}
+
+.jumbotron {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 157, 117, 0.8),
+      rgba(0, 157, 117, 0.8)
+    ),
+    url("../assets/belajar.jpg");
+
+  padding: 100px;
+  text-align: center;
+  color: white;
+  background-size: cover;
+}
+
+.float {
+  cursor: pointer;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0c9;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

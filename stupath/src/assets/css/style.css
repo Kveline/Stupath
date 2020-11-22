@@ -60,7 +60,7 @@ body{
 .login a{
     padding: 66px 173px;
     height: 169px;
-    background: #367D5D;
+    background: #00918e;
     margin: auto;
     text-align: center;
     font-weight: bold;
@@ -87,7 +87,6 @@ body{
     text-align: center;
     font-weight: 900;
     font-size: 40px;
-    line-height: 56px;
     margin-bottom: 42px;
     color: #000000;
 }
@@ -105,7 +104,6 @@ body{
     outline: none;
     font-weight: normal;
     font-size: 18px;
-    line-height: 21px;
     padding-left: min(10%,59px);
     margin-bottom: 42px;
     border-style: none;
@@ -114,11 +112,14 @@ body{
 
 .login-container button{
     border: none;
+    border-radius: 12px;
     margin: 20px;
-    padding: 16px 40px;
-    background: #367D5D;
+    padding: 12px 40px;
+    background: #00918e;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
+    outline: none;
+    cursor: pointer;
     color: #FFFFFF;
 }
 
@@ -173,7 +174,7 @@ body{
     height: 96px;
     left: 825px;
     top: 725px;
-    background: #367D5D;
+    background: #00918e;
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;

@@ -1,23 +1,46 @@
 <template>
-  <div class="login-container">
-    <p>Login</p>
-    <input
-      v-model="loginForm.email"
-      type="text"
-      placeholder="Email"
-      name="email"
-      required
-    />
+  <div
+    style="    background: black;
+    position: absolute;
+    margin: auto;
+    height: 130vh;
+    width: 100%;
+    text-align: center;"
+  >
+    <div class="login-container">
+      <p>Login</p>
+      <input
+        v-model="loginForm.email"
+        type="text"
+        placeholder="Email"
+        name="email"
+        required
+      />
 
-    <input
-      v-model="loginForm.password"
-      type="password"
-      placeholder="Password"
-      name="psw"
-      required
-    />
+      <input
+        v-model="loginForm.password"
+        type="password"
+        placeholder="Password"
+        name="psw"
+        required
+      />
 
-    <button @click="login">Login</button>
+      <button @click="login">Login</button>
+
+      <p
+        style="margin-top:22px;font-weight:400;color: #6f737b;font-size:18px"
+        class="card-text"
+      >
+        Belum punya akun ? silahkan <br />
+        melakukan
+        <router-link
+          style="cursor:pointer;color:#00918e;font-weight:bold"
+          tag="span"
+          to="/register"
+          >registrasi</router-link
+        >
+      </p>
+    </div>
   </div>
 </template>
 
@@ -56,7 +79,7 @@ export default {
         user = user.user;
         this.$store.commit("setCurrentUser", user);
         await this.$store.dispatch("fetchUserProfile");
-        this.$router.push("/dashboard");
+        this.$router.push("/");
       }
     }
   }

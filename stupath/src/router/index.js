@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import firebase from "../firebase";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Register from "../views/Register";
@@ -15,17 +16,35 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
-  },
+    component: Home,
+    meta: {
+      requiresLogin: true
+    },
 
-  {
-    path: "/dashboard",
-    component: Dashboard
-  },
+    children: [
+      {
+        path: "",
+        component: Dashboard
+      },
 
-  {
-    path: "/learning/:id",
-    component: Learning
+      {
+        path: "/learning/:id",
+        component: Learning
+      },
+      {
+        path: "/tambah-forum",
+        component: TambahForum
+      },
+
+      {
+        path: "/forum",
+        component: ListForum
+      },
+      {
+        path: "/forum/:id",
+        component: DetailForum
+      }
+    ]
   },
 
   {
@@ -36,19 +55,6 @@ const routes = [
   {
     path: "/register",
     component: Register
-  },
-  {
-    path: "/tambah-forum",
-    component: TambahForum
-  },
-
-  {
-    path: "/forum",
-    component: ListForum
-  },
-  {
-    path: "/forum/:id",
-    component: DetailForum
   }
 ];
 
@@ -56,6 +62,18 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  let currentUser = firebase.auth.currentUser;
+  let requiresLogin = to.matched.some(x => x.meta.requiresLogin);
+  console.log(currentUser, requiresLogin);
+  if (requiresLogin) {
+    if (!currentUser) next("/login");
+    else next();
+  } else {
+    next();
+  }
 });
 
 export default router;

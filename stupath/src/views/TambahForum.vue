@@ -1,7 +1,16 @@
 <template>
   <div>
     <Navbar />
-    <h1 class="judul-halaman">TAMBAH FORUM</h1>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Tambah Topik Forum</h1>
+        <p class="lead">
+          Forum yang akan digunakan
+          <br />
+          untuk berdiskusi seputar pekerjaan / materi sesama pengguna
+        </p>
+      </div>
+    </div>
 
     <div class="tambah-diskusi">
       <p>Nama Pekerjaan</p>
@@ -29,7 +38,7 @@
         name="isidiskusi"
       ></textarea>
 
-      <button @click="tambahForum">Submit</button>
+      <button @click="tambahForum">Tambahkan Topik</button>
     </div>
   </div>
 </template>
@@ -73,6 +82,7 @@ export default {
       this.dataForum.judul = "";
       this.dataForum.deskripsi = "";
       this.dataForum.pekerjaan = "";
+      this.$router.push("/forum");
     }
   },
   computed: mapState(["userProfile"])
@@ -89,7 +99,7 @@ export default {
 }
 
 .tambah-diskusi {
-  margin-top: -25px;
+  margin-top: -65px;
   padding: 80px;
 }
 .tambah-diskusi p {
@@ -100,6 +110,7 @@ export default {
   margin: 25px 0px;
 }
 .tambah-diskusi input {
+  outline: none;
   width: 70%;
   height: 70px;
   font-weight: normal;
@@ -125,10 +136,12 @@ export default {
   display: flex;
   margin-top: 50px;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 22px;
+  border: none;
   line-height: 42px;
-  padding: 27px 77px;
+  padding: 10px 40px;
   color: #ffffff;
-  background: #367d5d;
+  background: #00918e;
+  border-radius: 12px;
 }
 </style>

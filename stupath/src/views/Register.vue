@@ -1,43 +1,52 @@
 <template>
-  <div class="login-container">
-    <p>Register</p>
-    <input
-      v-model="registerForm.email"
-      type="text"
-      placeholder="Email"
-      name="email"
-      required
-    />
+  <div
+    style="    background: black;
+    position: absolute;
+    margin: auto;
+    height: 180vh;
+    width: 100%;
+    text-align: center;"
+  >
+    <div class="login-container">
+      <p>Register</p>
+      <input
+        v-model="registerForm.email"
+        type="text"
+        placeholder="Email"
+        name="email"
+        required
+      />
 
-    <input
-      v-model="registerForm.username"
-      type="text"
-      placeholder="Username"
-      name="email"
-      required
-    />
+      <input
+        v-model="registerForm.username"
+        type="text"
+        placeholder="Username"
+        name="email"
+        required
+      />
 
-    <select v-model="registerForm.role" name="" id="">
-      <option value="admin">Admin</option>
-      <option value="user">user</option>
-    </select>
+      <select v-model="registerForm.role" name="" id="">
+        <option value="admin">Admin</option>
+        <option value="user">user</option>
+      </select>
 
-    <input
-      v-model="registerForm.password"
-      type="password"
-      placeholder="Password"
-      name="psw"
-      required
-    />
-    <input
-      v-model="registerForm.passwordRepeat"
-      type="password"
-      placeholder="Repeat Password"
-      name="psw"
-      required
-    />
+      <input
+        v-model="registerForm.password"
+        type="password"
+        placeholder="Password"
+        name="psw"
+        required
+      />
+      <input
+        v-model="registerForm.passwordRepeat"
+        type="password"
+        placeholder="Repeat Password"
+        name="psw"
+        required
+      />
 
-    <button @click="register">Register</button>
+      <button @click="register">Register</button>
+    </div>
   </div>
 </template>
 

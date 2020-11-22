@@ -1,25 +1,19 @@
 <template>
   <div v-if="diskusi">
     <Navbar />
-    <h1 class="judul-halaman">DISKUSI</h1>
-
-    <div class="big-card container">
-      <div class="card">
-        <div class="card-header">
-          {{ diskusi.username }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ diskusi.judul }}</h5>
-          <p class="card-text">
-            {{ diskusi.deskripsi }}
-          </p>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">{{ diskusi.judul }}</h1>
+        <p class="lead">
+          <br />
+          {{ diskusi.deskripsi }} <br />
+          <br>
+          dibuat oleh {{ diskusi.username }}
+        </p>
       </div>
     </div>
 
-    <hr />
-
-    <div >
+    <div>
       <div v-if="diskusi.balasan.length > 0" class="list-balasan">
         <div
           :key="balasan.isi + index"
@@ -37,12 +31,9 @@
         </div>
       </div>
     </div>
-
-    <hr />
-
     <div class="membalas-diskusi">
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <h2 style="margin:12px;font-size:18px;">Berikan Tanggapan</h2>
         <textarea
           v-model="isiBalasan"
           class="form-control"
@@ -50,7 +41,9 @@
           rows="3"
         ></textarea>
       </div>
-      <button @click="balasDiskusi" class="btn btn-primary">Balas</button>
+      <button @click="balasDiskusi" class="btn btn-primary">
+        Kirim Tanggapan
+      </button>
     </div>
   </div>
 </template>
@@ -125,16 +118,59 @@ export default {
 }
 
 .list-balasan {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  max-height: 595px;
+  overflow-y: auto;
+}
+
+.card-header {
+  color: white;
+  background: rgba(0, 157, 117, 0.8);
+  border-radius: 26px 26px 0px 0px !important;
+}
+
+.card-text {
+  color: #6f737b;
 }
 
 .balasan {
-  width: 60%;
+  width: 70%;
   margin-top: 40px;
   margin-left: 60px;
+  border: none;
+  box-shadow: 0px 4px 53px -17px rgba(0, 0, 0, 0.25);
+  border-radius: 26px;
 }
 
 .membalas-diskusi {
   padding: 10px 140px;
+  box-shadow: 0px 4px 53px -17px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+  background: #00918e;
+  border: #00918e;
+  border-radius: 12px;
+}
+
+.jumbotron {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 157, 117, 0.8),
+      rgba(0, 157, 117, 0.8)
+    ),
+    url("../assets/belajar.jpg");
+
+  padding: 100px;
+  text-align: center;
+  color: white;
+  background-size: cover;
+}
+
+textarea {
+  border-radius: 12px;
+  padding: 10px;
+  color: #212e22;
 }
 </style>
